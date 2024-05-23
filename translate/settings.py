@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-wantr6+5)519lfk8h2nf0b1romu41=07u5nn73ltzxy66znu1v
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://translate-with-img.onrender.com']
 
 
 # Application definition
