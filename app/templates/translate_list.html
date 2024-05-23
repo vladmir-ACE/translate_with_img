@@ -9,11 +9,18 @@
             width: 100%;
             object-fit: cover;
         }
+        .scrollable-div {
+            max-height: 150px;
+            overflow-y: auto;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="my-4 text-center">Liste des parties à traduire </h1>
+        <h1 class="my-4 text-center">Liste des parties à traduire</h1>
         <div class="text-center mb-4">
             <a href="{% url 'translate_create' %}" class="btn btn-primary">Ajouter une nouvelle partie</a>
         </div>
@@ -24,10 +31,14 @@
                         <img src="{{ translate.image.url }}" class="card-img-top" alt="Image for translation">
                         <div class="card-body">
                             <h5 class="card-title">French Text:</h5>
-                            <p class="card-text">{{ translate.french_text }}</p>
+                            <div class="scrollable-div">
+                                <p class="card-text">{{ translate.french_text }}</p>
+                            </div>
                             <h5 class="card-title">English Text:</h5>
-                            <p class="card-text">{{ translate.english_text }}</p>
-                            <a href="{% url 'translate_delete' translate.pk %}" class="btn btn-danger">Delete</a>
+                            <div class="scrollable-div">
+                                <p class="card-text">{{ translate.english_text }}</p>
+                            </div>
+                            <a href="{% url 'translate_delete' translate.pk %}" class="btn btn-danger mt-3">Delete</a>
                         </div>
                     </div>
                 </div>
